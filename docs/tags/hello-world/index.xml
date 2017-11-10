@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hello World on Apprentice Engineer&#39;s Notes</title>
-    <link>https://757wolf.github.io/myblog/tags/hello-world/</link>
+    <link>https://wolfc757.github.io/myblog/tags/hello-world/</link>
     <description>Recent content in Hello World on Apprentice Engineer&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 10 Nov 2017 04:13:06 +0900</lastBuildDate>
     
-	<atom:link href="https://757wolf.github.io/myblog/tags/hello-world/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wolfc757.github.io/myblog/tags/hello-world/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hello World</title>
-      <link>https://757wolf.github.io/myblog/posts/hello-world/</link>
+      <link>https://wolfc757.github.io/myblog/posts/hello-world/</link>
       <pubDate>Fri, 10 Nov 2017 04:13:06 +0900</pubDate>
       
-      <guid>https://757wolf.github.io/myblog/posts/hello-world/</guid>
+      <guid>https://wolfc757.github.io/myblog/posts/hello-world/</guid>
       <description>&lt;p&gt;こんにちは初めまして&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
