@@ -1,0 +1,8 @@
+baseURL = "https://wolfc757.github.io/myblog"
+languageCode = "ja"
+title = "Apprentice Engineer's Notes"
+theme = "ananke"
+publishDir = "docs"
+
+[params]
+    featured_image = "/images/pc.jpg"

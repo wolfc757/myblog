@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://757wolf.github.io/myblog/posts/hugo-install/</loc>
+    <lastmod>2017-11-10T05:18:11+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://757wolf.github.io/myblog/posts/hello-world/</loc>
+    <lastmod>2017-11-10T04:13:06+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://757wolf.github.io/myblog/</loc>
+    <lastmod>2017-11-10T05:18:11+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://757wolf.github.io/myblog/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://757wolf.github.io/myblog/tags/hello-world/</loc>
+    <lastmod>2017-11-10T04:13:06+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://757wolf.github.io/myblog/tags/hugo/</loc>
+    <lastmod>2017-11-10T05:18:11+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://757wolf.github.io/myblog/posts/</loc>
+    <lastmod>2017-11-10T05:18:11+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://757wolf.github.io/myblog/tags/</loc>
+    <lastmod>2017-11-10T04:13:06+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://757wolf.github.io/myblog/tags/%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/</loc>
+    <lastmod>2017-11-10T05:18:11+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://757wolf.github.io/myblog/tags/%E3%83%A1%E3%83%A2/</loc>
+    <lastmod>2017-11-10T05:18:11+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
