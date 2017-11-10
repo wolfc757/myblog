@@ -11,7 +11,7 @@ tags: ["HUGO","してみた","メモ"]
 
 <!--more-->
 
-# HUGOとは？
+## HUGOとは？
 
 ![HUGOサイト](/images/blog2/hugo.png "HUGOサイト")
 
@@ -25,7 +25,7 @@ HUGOとはGo言語で作られた静的サイトジェネレータです。
 
 
 
-# HUGOのインストール
+## HUGOのインストール
 
 macの方で[Homebrew](https://brew.sh/)を使っている方は以下の一行でインストールが可能です。
 
@@ -42,7 +42,7 @@ $ hugo version
 
 
 
-# 新しいサイトを作成
+## 新しいサイトを作成
 
 ```
 $ hugo new site [好きなディレクトリ名]
@@ -56,7 +56,7 @@ $ hugo new site myblog
 
 
 
-# テーマを追加
+## テーマを追加
 
 好きなテーマを追加します。  
 テーマは[こちら](https://themes.gohugo.io/)に一覧があります。  
@@ -75,7 +75,7 @@ $ echo 'theme = "ananke"' >> config.toml
 
 
 
-# コンテンツを追加
+## コンテンツを追加
 
 ```
 $ hugo new posts/hello-world.md
@@ -94,7 +94,7 @@ $ hugo server -D
 
 
 
-# テーマをカスタマイズ
+## テーマをカスタマイズ
 タイトルなど変更するために`config.toml`を変更します。  
 好きなエディタ等で開くと以下のようになっているかと思います。
 ```
@@ -116,7 +116,7 @@ theme = "ananke"
 
 その他のカスタマイズは[テーマ](https://themes.gohugo.io/gohugo-theme-ananke/)の説明に載っています。　　
 
-# 最後に
+## 最後に
 
 ここまでで何となくブログの作成ができました。  
 すごく簡単にできて驚きです。

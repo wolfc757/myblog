@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Apprentice Engineer&#39;s Notes  | HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開してみた</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.29" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    <link href='http://blog.wolfc757.net/dist/main.css' rel='stylesheet' type="text/css" />
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開してみた" />
+<meta property="og:description" content="HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開した方法についてメモを書いておきます。
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wolfc757.net/posts/blog3/" />
+
+
+
+<meta property="article:published_time" content="2017-11-10T15:37:05&#43;09:00"/>
+<meta property="article:modified_time" content="2017-11-10T15:37:05&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開してみた">
+<meta itemprop="description" content="HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開した方法についてメモを書いておきます。
+
+">
+
+
+<meta itemprop="dateModified" content="2017-11-10T15:37:05&#43;09:00" />
+<meta itemprop="wordCount" content="87">
+
+
+
+<meta itemprop="keywords" content="HUGO,してみた,メモ,Github Pages," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開してみた"/>
+<meta name="twitter:description" content="HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開した方法についてメモを書いておきます。
+
+"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('http://blog.wolfc757.net/images/blog3/githubpage.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://blog.wolfc757.net/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Apprentice Engineer&#39;s Notes
+    </a>
+    <div class="flex-l items-center">
+      
+      
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開してみた</h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <p class="f6 b helvetica tracked">
+          POSTS
+        </p>
+        <h1 class="f1">
+          HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開してみた
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        <p>HUGOで作成したサイトをGithub Pages + 独自ドメインで公開した方法についてメモを書いておきます。</p>
+
+<p></p>
+
+<p>ここではHUGOのサイトを作った前提で進めていきます。
+HUGOでのサイトの作り方等は<a href="http://blog.wolfc757.net/posts/blog2/">こちら</a>にメモを書いています。</p>
+
+<p>今回の内容はHUGOのサイトの<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">ここ</a>を参考にしています。</p>
+
+<h2 id="hugoでの設定">HUGOでの設定</h2>
+
+<p><code>docs</code> のフォルダを公開するのでソースを <code>docs</code> に出すように
+設定ファイルの <code>config.toml</code> に以下を追加。<br />
+それとbaseURLをGithubのURLに変更します。</p>
+
+<pre><code>publishDir = &quot;docs&quot;
+</code></pre>
+
+<p>その後ビルド</p>
+
+<pre><code>$ hugo
+</code></pre>
+
+<p>あとはgithubのリポジトリを作りそこにpushする。</p>
+
+<pre><code>$ git add .
+$ git commit -&quot;好きなコメント”
+$ git remote add origin [自分のリポジトリurl]
+$ git push -u origin master
+</code></pre>
+
+<h2 id="githubの方での設定">Githubの方での設定</h2>
+
+<p>Githubの先ほどpushしたリポジトリの <code>setting</code> の <code>Github Pages</code> の項目を<br />
+<code>master branch /docs folder</code> に変更する。</p>
+
+<p><img src="/images/blog3/setting.png" alt="setting" title="setting" /></p>
+
+<p>するとGithub Pagesで公開できます！</p>
+
+<h2 id="独自ドメインの設定">独自ドメインの設定</h2>
+
+<p>ここではお名前.comで、すでにドメインを取っている程で進めます。 ここは<a href="https://gyoza.beer/post/2017-05-14-custom_domain/">このページ</a>を参考にさせてもらいました。</p>
+
+<p>先ほど設定した <code>setting</code> の Github Pages の中にある<br />
+<code>Custom domain</code> に設定したいURLをセットします。<br />
+自分は今回 <code>blog.wolfc757.net</code> というURLを利用しました。　</p>
+
+<p><img src="/images/blog3/setting2.png" alt="setting2" title="setting2" /><br />
+するとCNAMEファイルがコミットされるようです。</p>
+
+<p>その後、お名前.comのDNSレコード設定より以下のような設定を行えば独自ドメインで見ることができます！</p>
+
+<p><img src="/images/blog3/setting3.png" alt="setting3" title="setting3" /></p>
+
+<h2 id="最後に">最後に</h2>
+
+<p>思っていたよりもサックっとできました。<br />
+あとは、ブログをこねこね書いていくことと<br />
+https化したいなと思います！</p>
+
+<p>ではでは</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li>Host on GitHub<br />
+<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></li>
+<li>Github Pagesを独自ドメインで公開する<br />
+<a href="https://gyoza.beer/post/2017-05-14-custom_domain/">https://gyoza.beer/post/2017-05-14-custom_domain/</a></li>
+</ul>
+      </div>
+    </article>
+    <aside class="ph3 mt2 mt6-ns">
+      
+
+
+
+
+
+
+
+  <div class="bg-light-gray pa3">
+    <ul>
+      <li class="list b mb3">
+        2 More Posts
+      </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog3/" class="link ph2 pv2 db black o-50">
+            HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開してみた
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog2/" class="link ph2 pv2 db black">
+            HUGOでブログを作成してみた
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog1/" class="link ph2 pv2 db black">
+            Hello World
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+    </aside>
+  </div>
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://blog.wolfc757.net/" >
+    &copy; 2017 Apprentice Engineer&#39;s Notes
+  </a>
+  
+
+
+
+
+
+
+
+
+  </div>
+</footer>
+
+    <script src="http://blog.wolfc757.net/dist/app.bundle.js" async></script>
+
+  </body>
+</html>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on Apprentice Engineer&#39;s Notes</title>
-    <link>http://blog.wolfc757.net/tags/hugo/</link>
-    <description>Recent content in Hugo on Apprentice Engineer&#39;s Notes</description>
+    <title>Github Pages on Apprentice Engineer&#39;s Notes</title>
+    <link>http://blog.wolfc757.net/tags/github-pages/</link>
+    <description>Recent content in Github Pages on Apprentice Engineer&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 10 Nov 2017 15:37:05 +0900</lastBuildDate>
     
-	<atom:link href="http://blog.wolfc757.net/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wolfc757.net/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,17 +18,6 @@
       
       <guid>http://blog.wolfc757.net/posts/blog3/</guid>
       <description>&lt;p&gt;HUGOで作成したサイトをGithub Pages + 独自ドメインで公開した方法についてメモを書いておきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>HUGOでブログを作成してみた</title>
-      <link>http://blog.wolfc757.net/posts/blog2/</link>
-      <pubDate>Fri, 10 Nov 2017 05:18:11 +0900</pubDate>
-      
-      <guid>http://blog.wolfc757.net/posts/blog2/</guid>
-      <description>&lt;p&gt;このブログをHUGOで作成してみたのでそのメモを書いておきます。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
