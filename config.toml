@@ -1,4 +1,4 @@
-baseURL = "http://blog.wolfc757.net/"
+baseURL = "https://blog.wolfc757.net/"
 languageCode = "ja"
 title = "Apprentice Engineer's Notes"
 theme = "ananke"
