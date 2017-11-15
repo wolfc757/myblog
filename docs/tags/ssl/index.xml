@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Github Pages on Apprentice Engineer&#39;s Notes</title>
-    <link>https://blog.wolfc757.net/tags/github-pages/</link>
-    <description>Recent content in Github Pages on Apprentice Engineer&#39;s Notes</description>
+    <title>Ssl on Apprentice Engineer&#39;s Notes</title>
+    <link>https://blog.wolfc757.net/tags/ssl/</link>
+    <description>Recent content in Ssl on Apprentice Engineer&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 15 Nov 2017 12:25:14 +0900</lastBuildDate>
     
-	<atom:link href="https://blog.wolfc757.net/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.wolfc757.net/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,17 +18,6 @@
       
       <guid>https://blog.wolfc757.net/posts/blog4/</guid>
       <description>&lt;p&gt;HUGOで作成したサイトをGithub Pages + 独自ドメインで公開していたのですがhttps化した時に思っていたよりコケてしまったのでその方法についてメモを書いておきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開してみた</title>
-      <link>https://blog.wolfc757.net/posts/blog3/</link>
-      <pubDate>Fri, 10 Nov 2017 15:37:05 +0900</pubDate>
-      
-      <guid>https://blog.wolfc757.net/posts/blog3/</guid>
-      <description>&lt;p&gt;HUGOで作成したサイトをGithub Pages + 独自ドメインで公開した方法についてメモを書いておきます。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

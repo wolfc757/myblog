@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.wolfc757.net/posts/blog4/</loc>
+    <lastmod>2017-11-15T12:25:14+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.wolfc757.net/posts/blog3/</loc>
     <lastmod>2017-11-10T15:37:05+09:00</lastmod>
   </url>
@@ -19,7 +24,7 @@
   
   <url>
     <loc>https://blog.wolfc757.net/</loc>
-    <lastmod>2017-11-10T15:37:05+09:00</lastmod>
+    <lastmod>2017-11-15T12:25:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -30,7 +35,7 @@
   
   <url>
     <loc>https://blog.wolfc757.net/tags/github-pages/</loc>
-    <lastmod>2017-11-10T15:37:05+09:00</lastmod>
+    <lastmod>2017-11-15T12:25:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -42,31 +47,37 @@
   
   <url>
     <loc>https://blog.wolfc757.net/tags/hugo/</loc>
-    <lastmod>2017-11-10T15:37:05+09:00</lastmod>
+    <lastmod>2017-11-15T12:25:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.wolfc757.net/posts/</loc>
-    <lastmod>2017-11-10T15:37:05+09:00</lastmod>
+    <lastmod>2017-11-15T12:25:14+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.wolfc757.net/tags/ssl/</loc>
+    <lastmod>2017-11-15T12:25:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.wolfc757.net/tags/</loc>
-    <lastmod>2017-11-10T15:37:05+09:00</lastmod>
+    <lastmod>2017-11-15T12:25:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.wolfc757.net/tags/%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/</loc>
-    <lastmod>2017-11-10T15:37:05+09:00</lastmod>
+    <lastmod>2017-11-15T12:25:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.wolfc757.net/tags/%E3%83%A1%E3%83%A2/</loc>
-    <lastmod>2017-11-10T15:37:05+09:00</lastmod>
+    <lastmod>2017-11-15T12:25:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   

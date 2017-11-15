@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Apprentice Engineer&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 10 Nov 2017 15:37:05 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 15 Nov 2017 12:25:14 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.wolfc757.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Github Pages</title>
       <link>https://blog.wolfc757.net/tags/github-pages/</link>
-      <pubDate>Fri, 10 Nov 2017 15:37:05 +0900</pubDate>
+      <pubDate>Wed, 15 Nov 2017 12:25:14 +0900</pubDate>
       
       <guid>https://blog.wolfc757.net/tags/github-pages/</guid>
       <description></description>
@@ -32,16 +32,25 @@
     <item>
       <title>Hugo</title>
       <link>https://blog.wolfc757.net/tags/hugo/</link>
-      <pubDate>Fri, 10 Nov 2017 15:37:05 +0900</pubDate>
+      <pubDate>Wed, 15 Nov 2017 12:25:14 +0900</pubDate>
       
       <guid>https://blog.wolfc757.net/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Ssl</title>
+      <link>https://blog.wolfc757.net/tags/ssl/</link>
+      <pubDate>Wed, 15 Nov 2017 12:25:14 +0900</pubDate>
+      
+      <guid>https://blog.wolfc757.net/tags/ssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>してみた</title>
       <link>https://blog.wolfc757.net/tags/%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/</link>
-      <pubDate>Fri, 10 Nov 2017 15:37:05 +0900</pubDate>
+      <pubDate>Wed, 15 Nov 2017 12:25:14 +0900</pubDate>
       
       <guid>https://blog.wolfc757.net/tags/%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F/</guid>
       <description></description>
@@ -50,7 +59,7 @@
     <item>
       <title>メモ</title>
       <link>https://blog.wolfc757.net/tags/%E3%83%A1%E3%83%A2/</link>
-      <pubDate>Fri, 10 Nov 2017 15:37:05 +0900</pubDate>
+      <pubDate>Wed, 15 Nov 2017 12:25:14 +0900</pubDate>
       
       <guid>https://blog.wolfc757.net/tags/%E3%83%A1%E3%83%A2/</guid>
       <description></description>

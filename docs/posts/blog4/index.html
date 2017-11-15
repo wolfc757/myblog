@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Apprentice Engineer&#39;s Notes  | 公開したサイトをhttps化してみた</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.29" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    <link href='https://blog.wolfc757.net/dist/main.css' rel='stylesheet' type="text/css" />
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="公開したサイトをhttps化してみた" />
+<meta property="og:description" content="Github Pages &#43; cloudflare &#43; 独自ドメイン" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.wolfc757.net/posts/blog4/" />
+
+
+
+<meta property="article:published_time" content="2017-11-15T12:25:14&#43;09:00"/>
+<meta property="article:modified_time" content="2017-11-15T12:25:14&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="公開したサイトをhttps化してみた">
+<meta itemprop="description" content="Github Pages &#43; cloudflare &#43; 独自ドメイン">
+
+
+<meta itemprop="dateModified" content="2017-11-15T12:25:14&#43;09:00" />
+<meta itemprop="wordCount" content="68">
+
+
+
+<meta itemprop="keywords" content="HUGO,してみた,メモ,Github Pages,ssl," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="公開したサイトをhttps化してみた"/>
+<meta name="twitter:description" content="Github Pages &#43; cloudflare &#43; 独自ドメイン"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://blog.wolfc757.net/images/blog4/cloudflare.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://blog.wolfc757.net/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Apprentice Engineer&#39;s Notes
+    </a>
+    <div class="flex-l items-center">
+      
+      
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">公開したサイトをhttps化してみた</h1>
+        
+          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+            Github Pages &#43; cloudflare &#43; 独自ドメイン
+          </h2>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <p class="f6 b helvetica tracked">
+          POSTS
+        </p>
+        <h1 class="f1">
+          公開したサイトをhttps化してみた
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        <p>HUGOで作成したサイトをGithub Pages + 独自ドメインで公開していたのですがhttps化した時に思っていたよりコケてしまったのでその方法についてメモを書いておきます。</p>
+
+<p></p>
+
+<p>今回はcloudflareというサービスを利用しました。<br />
+負荷分散等で使われるものみたいですが無料でSSLが使える機能もあったので利用させてもらいました。</p>
+
+<h2 id="cloudflareのアカウントを取りドメインを登録">cloudflareのアカウントを取りドメインを登録</h2>
+
+<p><a href="https://www.cloudflare.com/">https://www.cloudflare.com/</a><br />
+アカウントをとって自分の契約した登録したいドメイン名を登録します。</p>
+
+<h2 id="dnsの変更">DNSの変更</h2>
+
+<p>今回自分は、お名前.comで登録を行ったのでお名前.comのDNSからcloudflareのDNSに変更しました。</p>
+
+<p>cloudflareのDNSのアドレスは <code>DNS</code> の <code>Cloudflare Nameservers</code> という項目の中にあります。</p>
+
+<h2 id="dnsの設定">DNSの設定</h2>
+
+<p>cloudflareの <code>DNS</code> の <code>DNS Records</code> という項目から設定します。<br />
+<code>CNAME</code>でも<code>Aレコード</code>でもどちらでもできるといった記述をみたのですが<code>CNAME</code>では上手く行かなかったので<code>Aレコード</code>で設定しました。　</p>
+
+<p><img src="/images/blog4/dns.png" alt="dns設定" title="dns" />
+こんな感じ</p>
+
+<h2 id="hstsの設定">HSTSの設定</h2>
+
+<p>cloudflareの <code>Crypto</code> の <code>HTTP Strict Transport Security (HSTS)</code> の項目を変更します。<br />
+自分は<a href="https://qiita.com/noraworld/items/89dd85a434a7b759e00c">参考にしたブログ</a>と同じく以下のような設定にしました。　　</p>
+
+<p><img src="/images/blog4/hsts.png" alt="hsts設定" title="hsts" />
+こんな感じ</p>
+
+<h2 id="httpsへのリダイレクト">HTTPSへのリダイレクト</h2>
+
+<p>cloudflareの <code>Page Rules</code> からリダイレクトの設定を行います。</p>
+
+<p><img src="/images/blog4/https.png" alt="リダイレクト" title="リダイレクト" />
+こんな感じ</p>
+
+<p>ここで設定している <code>Always Use HTTPS</code> はDNSがcloudflareのになってないと表示されない場合があるみたいなので表示されなかったらまったり待ちましょう。</p>
+
+<p>一応こんな感じでHTTPS化ができました！</p>
+
+<h2 id="最後に">最後に</h2>
+
+<p>なかなか最初は表示されたり表示されなかったりと不安でしたが放置してたら動くようになったので気長に待つことも大事なのかなと思いました。</p>
+
+<p>ではでは</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li>カスタムドメインの GitHub Pages で HTTPS を使う<br />
+<a href="https://qiita.com/superbrothers/items/95e5723e9bd320094537">https://qiita.com/superbrothers/items/95e5723e9bd320094537</a></li>
+<li>CloudflareでGitHub PagesをHTTPS化<br />
+<a href="https://rcmdnk.com/blog/2017/01/03/blog-github-web/">https://rcmdnk.com/blog/2017/01/03/blog-github-web/</a></li>
+<li>Troubleshooting custom domains
+<a href="https://help.github.com/articles/troubleshooting-custom-domains/">https://help.github.com/articles/troubleshooting-custom-domains/</a></li>
+</ul>
+      </div>
+    </article>
+    <aside class="ph3 mt2 mt6-ns">
+      
+
+
+
+
+
+
+
+  <div class="bg-light-gray pa3">
+    <ul>
+      <li class="list b mb3">
+        3 More Posts
+      </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog4/" class="link ph2 pv2 db black o-50">
+            公開したサイトをhttps化してみた
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog3/" class="link ph2 pv2 db black">
+            HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開してみた
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog2/" class="link ph2 pv2 db black">
+            HUGOでブログを作成してみた
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog1/" class="link ph2 pv2 db black">
+            Hello World
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+    </aside>
+  </div>
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://blog.wolfc757.net/" >
+    &copy; 2017 Apprentice Engineer&#39;s Notes
+  </a>
+  
+
+
+
+
+
+
+
+
+  </div>
+</footer>
+
+    <script src="https://blog.wolfc757.net/dist/app.bundle.js" async></script>
+
+  </body>
+</html>
