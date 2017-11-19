@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Apprentice Engineer&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 15 Nov 2017 12:25:14 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 18 Nov 2017 02:57:28 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.wolfc757.net/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>D3.js(V4)を触ってみた(1)</title>
+      <link>https://blog.wolfc757.net/posts/blog5/</link>
+      <pubDate>Sat, 18 Nov 2017 02:57:28 +0900</pubDate>
+      
+      <guid>https://blog.wolfc757.net/posts/blog5/</guid>
+      <description>&lt;p&gt;D3.jsというデータに基づいてドキュメントを操作するためのJavaScriptライブラリを触ってみたのでメモを残しておきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>公開したサイトをhttps化してみた</title>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Apprentice Engineer&#39;s Notes  | D3.js(V4)を触ってみた(1)</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.29" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    <link href='https://blog.wolfc757.net/dist/main.css' rel='stylesheet' type="text/css" />
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="D3.js(V4)を触ってみた(1)" />
+<meta property="og:description" content="いろんなグラフを描いてみたかったんや" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.wolfc757.net/posts/blog5/" />
+
+
+
+<meta property="article:published_time" content="2017-11-18T02:57:28&#43;09:00"/>
+<meta property="article:modified_time" content="2017-11-18T02:57:28&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="D3.js(V4)を触ってみた(1)">
+<meta itemprop="description" content="いろんなグラフを描いてみたかったんや">
+
+
+<meta itemprop="dateModified" content="2017-11-18T02:57:28&#43;09:00" />
+<meta itemprop="wordCount" content="233">
+
+
+
+<meta itemprop="keywords" content="d3js,メモ," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="D3.js(V4)を触ってみた(1)"/>
+<meta name="twitter:description" content="いろんなグラフを描いてみたかったんや"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://blog.wolfc757.net/images/blog5/d3js.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://blog.wolfc757.net/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Apprentice Engineer&#39;s Notes
+    </a>
+    <div class="flex-l items-center">
+      
+      
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">D3.js(V4)を触ってみた(1)</h1>
+        
+          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+            いろんなグラフを描いてみたかったんや
+          </h2>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <p class="f6 b helvetica tracked">
+          POSTS
+        </p>
+        <h1 class="f1">
+          D3.js(V4)を触ってみた(1)
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        <p>D3.jsというデータに基づいてドキュメントを操作するためのJavaScriptライブラリを触ってみたのでメモを残しておきます。</p>
+
+<p></p>
+
+<p>今回は初めてだったので<a href="https://dotinstall.com/lessons/basic_d3js">ドットインストール</a>を参考にしながら進めました。</p>
+
+<h2 id="d3-jsとは">D3.jsとは</h2>
+
+<p>データに基づいてドキュメントを操作するためのJavaScriptライブラリでこのD3はData-Driven Documentsの略みたいです。</p>
+
+<p>どんなことができるかは<a href="https://github.com/d3/d3/wiki/Gallery">Gallery</a>等をみてみるとわかりやすいのではないでしょうか？</p>
+
+<h2 id="雛形">雛形</h2>
+
+<p>今回使う雛形</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;D3jsの練習&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;hello1&lt;/p&gt;
+    &lt;p&gt;hello2&lt;/p&gt;
+    &lt;p&gt;hello3&lt;/p&gt;
+    &lt;script src=&quot;https://d3js.org/d3.v4.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://d3js.org/d3-selection-multi.v0.4.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // ここにこねこね書く！
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+<p>こんな感じの雛形を使って行きます。<br />
+これ以降のコードは <code>ここにこねこね書く！</code> と書いてあるところに書いてください。</p>
+
+<h2 id="要素を選択">要素を選択</h2>
+
+<p>要素を選択するには <code>select</code> と <code>selectAll</code> を使って行きます。</p>
+
+<p>この雛形の場合bodyタグの中のpタグを全て選択しようとすると以下のようになります。</p>
+
+<pre><code>d3.select(&quot;body&quot;).selectAll(&quot;p&quot;);
+</code></pre>
+
+<h2 id="テキストを変更する">テキストを変更する</h2>
+
+<p>要素のテキストを変えたい時は <code>text</code> を使います。</p>
+
+<pre><code>d3.select(&quot;body&quot;).selectAll(&quot;p&quot;).text(&quot;hello form d3!&quot;);
+</code></pre>
+
+<p>変数として分けることもできます。</p>
+
+<pre><code>var p = d3.select(&quot;body&quot;).selectAll(&quot;p&quot;);
+p.text(&quot;hello form d3!&quot;);
+</code></pre>
+
+<p>こんな感じ
+<img src="/images/blog5/text.png" alt="text" title="text" /></p>
+
+<h2 id="スタイルを変更する">スタイルを変更する</h2>
+
+<p>要素のスタイルを変えたい時は <code>style</code> タグを使います。</p>
+
+<pre><code>var p = d3.select(&quot;body&quot;).selectAll(&quot;p&quot;);
+p.text(&quot;hello form d3!&quot;);
+p.style(&quot;font-size&quot;,&quot;28px&quot;);
+</code></pre>
+
+<p>メソッドチェーンでつなげたり複数のスタイルを指定することもできます。</p>
+
+<pre><code>var p = d3.select(&quot;body&quot;).selectAll(&quot;p&quot;);
+p.text(&quot;hello form d3!&quot;)
+    .style(&quot;font-size&quot;,&quot;28px&quot;)
+    .style(&quot;color&quot;,&quot;red&quot;);
+</code></pre>
+
+<p>スタイルを一度に指定することもできます。</p>
+
+<pre><code>var p = d3.select(&quot;body&quot;).selectAll(&quot;p&quot;);
+        p.text(&quot;hello form d3!&quot;)
+            .styles({
+                &quot;font-size&quot;: &quot;28px&quot;,
+                &quot;color&quot;: &quot;red&quot;
+            });
+</code></pre>
+
+<p>こんな感じ
+<img src="/images/blog5/style.png" alt="style" title="style" /></p>
+
+<h2 id="要素を加える">要素を加える</h2>
+
+<p>要素を加える時は <code>append</code> を使います。　　</p>
+
+<pre><code>d3.select(&quot;body&quot;).append(&quot;p&quot;).text(&quot;hello4&quot;);
+</code></pre>
+
+<p>こんな感じ
+<img src="/images/blog5/append.png" alt="append" title="append" /></p>
+
+<h2 id="要素を削除">要素を削除</h2>
+
+<p>要素を加える時は <code>remove</code> を使います。　　</p>
+
+<pre><code>d3.select(&quot;body&quot;).append(&quot;p&quot;).text(&quot;hello4&quot;).remove();
+</code></pre>
+
+<p>こんな感じ
+<img src="/images/blog5/remove.png" alt="remove" title="remove" /></p>
+
+<h2 id="データを紐付ける">データを紐付ける</h2>
+
+<p>要素を加える時は <code>data</code> を使います。　　</p>
+
+<pre><code>var dataset = [&quot;data1&quot;,&quot;data2&quot;,&quot;data3&quot;];
+var p = d3.select(&quot;body&quot;).selectAll(&quot;p&quot;);
+p.data(dataset).text(function(d){
+    return d;
+});
+
+</code></pre>
+
+<p>こんな感じ
+<img src="/images/blog5/data1.png" alt="data1" title="data1" /></p>
+
+<p>第二引数は要素数らしいのでこんな書き方もできます。　　</p>
+
+<pre><code>var dataset = [&quot;data1&quot;,&quot;data2&quot;,&quot;data3&quot;];
+var p = d3.select(&quot;body&quot;).selectAll(&quot;p&quot;);
+p.data(dataset).text(function(d,i){
+    return i + &quot;つ目のデータ : &quot; + d;
+});
+</code></pre>
+
+<p>こんな感じ
+<img src="/images/blog5/data2.png" alt="data2" title="data2" /></p>
+
+<h2 id="データを紐付ける時に要素数が足りない場合">データを紐付ける時に要素数が足りない場合</h2>
+
+<p>データを紐付ける時に要素数が足りない場合は <code>enter</code> を使います。
+足りない分は <code>append</code> で加えます。</p>
+
+<pre><code>var dataset = [&quot;data1&quot;,&quot;data2&quot;,&quot;data3&quot;,&quot;data4&quot;];
+var p = d3.select(&quot;body&quot;).selectAll(&quot;p&quot;);
+var update = p.data(dataset);
+var enter = update.enter();
+update.text(function(d){
+    return &quot;update : &quot; + d;
+});
+enter.append(&quot;p&quot;).text(function(d){
+    return &quot;enter : &quot; + d ;
+});
+</code></pre>
+
+<p>こんな感じ
+<img src="/images/blog5/enter.png" alt="enter" title="enter" /></p>
+
+<h2 id="データを紐付ける時に要素数が余る場合">データを紐付ける時に要素数が余る場合</h2>
+
+<p>データを紐付ける時に要素数が余る場合は <code>exit</code> を使います。<br />
+いらない分は <code>remove</code> で消します。　　</p>
+
+<pre><code>var dataset = [&quot;data1&quot;,&quot;data2&quot;];
+var p = d3.select(&quot;body&quot;).selectAll(&quot;p&quot;);
+var update = p.data(dataset);
+var exit = update.exit();
+update.text(function(d){
+    return &quot;update : &quot; + d;
+});
+exit.remove();
+</code></pre>
+
+<p>こんな感じ
+<img src="/images/blog5/exit.png" alt="exit" title="exit" /></p>
+
+<h2 id="最後に">最後に</h2>
+
+<p>jsを普段全く触らないのですが思っていたよりもサクサク書けてたので楽しかったです。
+今回後半部分までは書けなかったので次回後部分（svg部分）を書こうと思います。　　</p>
+
+<p>ではでは！</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li>Data-Driven Documents<br />
+<a href="https://d3js.org/">https://d3js.org/</a></li>
+<li>ドットインストール D3.js入門
+<a href="https://dotinstall.com/lessons/basic_d3js">https://dotinstall.com/lessons/basic_d3js</a></li>
+<li>D3.js ドットインストールはV3だけどV4でやってみた
+<a href="https://qiita.com/chamao/items/1f324e32ccbd547046b1">https://qiita.com/chamao/items/1f324e32ccbd547046b1</a></li>
+</ul>
+      </div>
+    </article>
+    <aside class="ph3 mt2 mt6-ns">
+      
+
+
+
+
+
+
+
+  <div class="bg-light-gray pa3">
+    <ul>
+      <li class="list b mb3">
+        4 More Posts
+      </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog5/" class="link ph2 pv2 db black o-50">
+            D3.js(V4)を触ってみた(1)
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog4/" class="link ph2 pv2 db black">
+            公開したサイトをhttps化してみた
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog3/" class="link ph2 pv2 db black">
+            HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開してみた
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog2/" class="link ph2 pv2 db black">
+            HUGOでブログを作成してみた
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog1/" class="link ph2 pv2 db black">
+            Hello World
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+    </aside>
+  </div>
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://blog.wolfc757.net/" >
+    &copy; 2017 Apprentice Engineer&#39;s Notes
+  </a>
+  
+
+
+
+
+
+
+
+
+  </div>
+</footer>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109772386-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109772386-1');
+</script>
+
+    <script src="https://blog.wolfc757.net/dist/app.bundle.js" async></script>
+
+  </body>
+</html>
