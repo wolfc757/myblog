@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Apprentice Engineer&#39;s Notes  | D3.js(V4)を使ってドラッグした時の動きを実装する</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.29" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    <link href='https://blog.wolfc757.net/dist/main.css' rel='stylesheet' type="text/css" />
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="D3.js(V4)を使ってドラッグした時の動きを実装する" />
+<meta property="og:description" content="色々動かせたらなんかテンション上がらん？笑" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.wolfc757.net/posts/blog7/" />
+
+
+
+<meta property="article:published_time" content="2017-12-15T18:22:00&#43;09:00"/>
+<meta property="article:modified_time" content="2017-12-15T18:22:00&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="D3.js(V4)を使ってドラッグした時の動きを実装する">
+<meta itemprop="description" content="色々動かせたらなんかテンション上がらん？笑">
+
+
+<meta itemprop="dateModified" content="2017-12-15T18:22:00&#43;09:00" />
+<meta itemprop="wordCount" content="156">
+
+
+
+<meta itemprop="keywords" content="d3js,メモ," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="D3.js(V4)を使ってドラッグした時の動きを実装する"/>
+<meta name="twitter:description" content="色々動かせたらなんかテンション上がらん？笑"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://blog.wolfc757.net/images/blog7/base.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://blog.wolfc757.net/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Apprentice Engineer&#39;s Notes
+    </a>
+    <div class="flex-l items-center">
+      
+      
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">D3.js(V4)を使ってドラッグした時の動きを実装する</h1>
+        
+          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+            色々動かせたらなんかテンション上がらん？笑
+          </h2>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <p class="f6 b helvetica tracked">
+          POSTS
+        </p>
+        <h1 class="f1">
+          D3.js(V4)を使ってドラッグした時の動きを実装する
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        <p>SVGの要素をドラッグしてみた内容です。</p>
+
+<p></p>
+
+<p>今回はSVGの要素をドラッグして動かせたらなって感じで作りました。</p>
+
+<h2 id="雛形">雛形</h2>
+
+<p>今回使う雛形は以下のを使います。</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;D3jsの練習&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script src=&quot;https://d3js.org/d3.v4.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://d3js.org/d3-selection-multi.v0.4.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // windowのサイズ
+        window_x = window.innerWidth;
+        window_y = window.innerHeight;
+
+        // 円の半径
+        r = 30;
+
+        // svgの作成
+        var svg = d3.select(&quot;body&quot;).append(&quot;svg&quot;).attrs({
+            width:window_x,
+            height:window_y
+        });
+
+        // 円の作成
+        var circle = svg.append(&quot;circle&quot;)
+                .attrs({
+                    r: r,
+                    fill: &quot;lightgreen&quot;,
+                    transform: &quot;translate(&quot; + window_x/2 + &quot;,&quot; + window_y/2 + &quot;)&quot;
+                });
+        // ここにこねこね書く！
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>簡単に説明しておくと画面の中央に緑の円ができている状態です。<br />
+これ以降のコードは <code>ここにこねこね書く！</code> と書いてあるところに書いてください。</p>
+
+<p>こんな感じ
+<img src="/images/blog7/base.png" alt="base" title="base" /></p>
+
+<h1 id="リスナーの追加">リスナーの追加</h1>
+
+<pre><code>// イベントをセット
+circle.call(d3.drag()
+    .on(&quot;start&quot;,dragstarted)
+    .on(&quot;drag&quot;, dragged)
+    .on(&quot;end&quot;,dragended)
+);
+</code></pre>
+
+<p>このようにセットします。<br />
+<code>on</code> の第一引数は<code>タイプ</code>,第二引数は<code>リスナー</code>です。<br />
+イベントリスナーが同じタイプと名前で登録されている場合は新しいリスナーが追加される前に既存のリスナーが削除されます。</p>
+
+<p>タイプについては以下の三つがあるようです。</p>
+
+<ul>
+<li><code>start</code> ・・・ 新しいポインタがアクティブになった後</li>
+<li><code>drag</code> ・・・ アクティブなポインタが移動した後</li>
+<li><code>end</code> ・・・　アクティブなポインタが非アクティブになった後</li>
+</ul>
+
+<h1 id="リスナーの作成">リスナーの作成</h1>
+
+<pre><code>// 新しいポインタがアクティブになった後に呼ばれる関数
+function dragstarted(d){
+    console.log(&quot;dragstarted&quot;);
+}
+// アクティブなポインタが移動した後に呼ばれる関数
+function dragged(d) {
+    console.log(&quot;dragged&quot;);
+    d3.select(this).attr(&quot;transform&quot;, &quot;translate(&quot; + d3.event.x + &quot;,&quot; + d3.event.y + &quot;)&quot;);
+}
+// アクティブなポインタが非アクティブになった後に呼ばれる関数
+function dragended(d){
+    console.log(&quot;dragended&quot;);
+}
+</code></pre>
+
+<p>このように作成しました。</p>
+
+<p>実行結果は以下のようになっています。　　</p>
+
+<p><p data-height="265" data-theme-id="0" data-slug-hash="wpaOma" data-default-tab="js,result" data-user="wolfc757" data-embed-version="2" data-pen-title="D3.js drag sample" class="codepen">See the Pen <a href="https://codepen.io/wolfc757/pen/wpaOma/">D3.js drag sample</a> by yuu (<a href="https://codepen.io/wolfc757">@wolfc757</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script></p>
+
+<h1 id="最後に">最後に</h1>
+
+<p>今回試したもののソースコードは<a href="https://gist.github.com/wolfc757/3b954563e82790d77d088fc21c820e40">ここ</a>に置いておきます。サンプルコードをみてるとCanvasで行ってたりする例もあったのでいろいろと使えそうですね！<br />
+では！</p>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li>D3.jsドキュメント(d3-drag)<br />
+<a href="https://github.com/d3/d3-drag/blob/master/README.md">https://github.com/d3/d3-drag/blob/master/README.md</a></li>
+<li>Circle Dragging IV<br />
+<a href="https://bl.ocks.org/mbostock/ec10387f24c1fad2acac3bc11eb218a5">https://bl.ocks.org/mbostock/ec10387f24c1fad2acac3bc11eb218a5</a></li>
+<li>Circle Dragging II<br />
+<a href="https://bl.ocks.org/mbostock/c206c20294258c18832ff80d8fd395c3">https://bl.ocks.org/mbostock/c206c20294258c18832ff80d8fd395c3</a></li>
+<li>d3.js入門　ドラッグイベント<br />
+<a href="http://jsdo.it/_shimizu/hszt">http://jsdo.it/_shimizu/hszt</a></li>
+</ul>
+      </div>
+    </article>
+    <aside class="ph3 mt2 mt6-ns">
+      
+
+
+
+
+
+
+
+  <div class="bg-light-gray pa3">
+    <ul>
+      <li class="list b mb3">
+        6 More Posts
+      </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog7/" class="link ph2 pv2 db black o-50">
+            D3.js(V4)を使ってドラッグした時の動きを実装する
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog6/" class="link ph2 pv2 db black">
+            D3.js(V4)を触ってみた(2)
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog5/" class="link ph2 pv2 db black">
+            D3.js(V4)を触ってみた(1)
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog4/" class="link ph2 pv2 db black">
+            公開したサイトをhttps化してみた
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog3/" class="link ph2 pv2 db black">
+            HUGOで作成したサイトをGithub Pages &#43; 独自ドメインで公開してみた
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog2/" class="link ph2 pv2 db black">
+            HUGOでブログを作成してみた
+          </a>
+        </li>
+      
+        <li class="list f5 w-100 hover-bg-white nl1">
+          
+          <a href="/posts/blog1/" class="link ph2 pv2 db black">
+            Hello World
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+    </aside>
+  </div>
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://blog.wolfc757.net/" >
+    &copy; 2017 Apprentice Engineer&#39;s Notes
+  </a>
+  
+
+
+
+
+
+
+
+
+  </div>
+</footer>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109772386-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109772386-1');
+</script>
+
+    <script src="https://blog.wolfc757.net/dist/app.bundle.js" async></script>
+
+  </body>
+</html>

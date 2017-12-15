@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Apprentice Engineer&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 19 Nov 2017 16:26:59 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 15 Dec 2017 18:22:00 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.wolfc757.net/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>D3.js(V4)を使ってドラッグした時の動きを実装する</title>
+      <link>https://blog.wolfc757.net/posts/blog7/</link>
+      <pubDate>Fri, 15 Dec 2017 18:22:00 +0900</pubDate>
+      
+      <guid>https://blog.wolfc757.net/posts/blog7/</guid>
+      <description>&lt;p&gt;SVGの要素をドラッグしてみた内容です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>D3.js(V4)を触ってみた(2)</title>
